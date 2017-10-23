@@ -11,7 +11,7 @@ public class PopupDisplay
 	public PopupDisplay()
 	{
 		icon = new ImageIcon(getClass().getResource("images/Oshabot.png"));
-		windowTitle = "COshabot says";
+		windowTitle = "Oshabot says";
 	}
 	
 	public void displayText(String message)
@@ -19,7 +19,7 @@ public class PopupDisplay
 		JOptionPane.showMessageDialog(null, message, windowTitle, JOptionPane.INFORMATION_MESSAGE, icon);
 	}
 	
-	public String getResponse(String question)
+	public String collectResponse(String question)
 	{
 		String answer = "";
 				
