@@ -25,7 +25,7 @@ public class Chatbot
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
 		this.questions = null;
-		this.username = null;
+		this.username = username;
 		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
@@ -34,22 +34,22 @@ public class Chatbot
 		this.followUps = null;
 	}
 
-	public void buildMovieList()
+	private void buildMovieList()
 	{
 		
 	}
 	
-	public void buildShoppingList()
+	private void buildShoppingList()
 	{
 		
 	}
 	
-	public void buildCuteAnimals()
+	private void buildCuteAnimals()
 	{
 		
 	}
 	
-	public void buildQuestions()
+	private void buildQuestions()
 	{
 		
 	}
@@ -61,7 +61,17 @@ public class Chatbot
 	
 	public boolean lengthChecker(String input)
 	{
-		return false;
+		boolean validLength = false;
+		
+		if (input != null)
+		{
+			if (input.length() > 2)
+			{
+				validLength = true;
+			}
+		}
+		
+		return validLength;
 	}
 	
 	public boolean htmlTagChecker(String input)
