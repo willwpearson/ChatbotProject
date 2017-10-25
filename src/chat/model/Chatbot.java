@@ -48,14 +48,14 @@ public class Chatbot
 	}
 	private void buildMovieList()
 	{
-		movieList.add("Spiderman");
-		movieList.add("Hidden Figures");
-		movieList.add("Inception");
-		movieList.add("Interstellar");
-		movieList.add("Dunkirk");
-		movieList.add("The Prestige");
-		movieList.add("Logan");
-		movieList.add("Ex Machina");
+//		movieList.add("Spiderman");
+//		movieList.add("Hidden Figures");
+//		movieList.add("Inception");
+//		movieList.add("Interstellar");
+//		movieList.add("Dunkirk");
+//		movieList.add("The Prestige");
+//		movieList.add("Logan");
+//		movieList.add("Ex Machina");
 	}
 	
 	private void buildShoppingList()
