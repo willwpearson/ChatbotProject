@@ -100,7 +100,7 @@ public class Chatbot
 		questions[0] = "What is your name?";
 		questions[1] = "What is your favorite color?";
 		questions[2] = "What is the airspeed of a coconut laden swallow?";
-		questions[3] = "Why are you the way you are?";
+		questions[3] = "Why are you the way that you are?";
 		questions[4] = "How are you?";
 		questions[5] = "What are you studying in school?";
 		questions[6] = "What is your favorite pokemon?";
