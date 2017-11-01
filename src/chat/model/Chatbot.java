@@ -88,7 +88,12 @@ public class Chatbot
 	
 	public String processConversation(String input)
 	{
-		return null;
+		String chatbotResponse = "";
+		chatbotResponse += "You said:" + "\n" + input + "\n";
+		
+		chatbotResponse += buildChatbotResponse();
+		
+		return chatbotResponse;
 	}
 	
 	private String buildChatbotResponse()
