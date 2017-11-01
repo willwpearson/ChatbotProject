@@ -46,6 +46,7 @@ public class Chatbot
 		verbs[2] = "am ambivalent about";
 		verbs[3] = "am thinking about";
 	}
+	
 	private void buildMovieList()
 	{
 //		movieList.add("Spiderman");
@@ -111,6 +112,7 @@ public class Chatbot
 		
 		return response;
 	}
+	
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
