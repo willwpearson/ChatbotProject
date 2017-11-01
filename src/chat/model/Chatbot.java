@@ -37,6 +37,8 @@ public class Chatbot
 		buildMovieList();
 		buildShoppingList();
 		buildCuteAnimals();
+		buildTopics();
+		buildQuestions();
 	}
 
 	private void buildVerbs()
@@ -82,9 +84,30 @@ public class Chatbot
 		cuteAnimalMemes.add("floofer");
 	}
 	
+	private void buildTopics()
+	{
+		topics[0] = "Math";
+		topics[1] = "Science";
+		topics[2] = "Quantum Physics";
+		topics[3] = "Chinese Food";
+		topics[4] = "Sushi";
+		topics[5] = "Holidays";
+		topics[6] = "Memes";
+	}
+	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "What is your name?";
+		questions[1] = "What is your favorite color?";
+		questions[2] = "What is the airspeed of a coconut laden swallow?";
+		questions[3] = "Why are you the way you are?";
+		questions[4] = "How are you?";
+		questions[5] = "What are you studying in school?";
+		questions[6] = "What is your favorite pokemon?";
+		questions[7] = "Who is your celebrity crush?";
+		questions[8] = "Why?";
+		questions[9] = "What is your favorite movie?";
+				
 	}
 	
 	public String processConversation(String input)
