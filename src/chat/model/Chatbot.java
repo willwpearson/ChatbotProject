@@ -81,7 +81,7 @@ public class Chatbot
 		cuteAnimalMemes.add("pupper");
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("kittie");
-		cuteAnimalMemes.add("floofer");
+		cuteAnimalMemes.add("FLOOFER");
 	}
 	
 	private void buildTopics()
@@ -188,7 +188,22 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
-		return false;
+		boolean validQuit = false;
+		
+		if (exitString!= "" && exitString != null && !exitString.equalsIgnoreCase("exit") && exitString.equalsIgnoreCase("quit"))
+		{
+			validQuit = true;
+		}
+//		if (exitString.equalsIgnoreCase("quit"))
+//		{
+//			validQuit = true;
+//		}
+//		else if (exitString != null && exitString != "" && !exitString.equalsIgnoreCase("exit"))
+//		{
+//			validQuit = true;
+//		}
+
+		return validQuit;
 	}
 
 	public boolean keyboardMashChecker(String sample)
