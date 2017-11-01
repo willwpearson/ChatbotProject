@@ -24,11 +24,6 @@ public class ChatbotController
 		}
 	}
 	
-//	public String interactWithChatbot(String input)
-//	{
-//		
-//	}
-	
 	private String popupChat(String chat)
 	{
 		String chatbotSays = "";
