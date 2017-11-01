@@ -194,15 +194,7 @@ public class Chatbot
 		{
 			validQuit = true;
 		}
-//		if (exitString.equalsIgnoreCase("quit"))
-//		{
-//			validQuit = true;
-//		}
-//		else if (exitString != null && exitString != "" && !exitString.equalsIgnoreCase("exit"))
-//		{
-//			validQuit = true;
-//		}
-
+		
 		return validQuit;
 	}
 
