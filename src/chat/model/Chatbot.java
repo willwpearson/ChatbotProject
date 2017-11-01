@@ -91,6 +91,21 @@ public class Chatbot
 		return null;
 	}
 	
+	private String buildChatbotResponse()
+	{
+		String response = "I ";
+		int random = (int) (Math.random() * verbs.length);
+		
+		response += verbs[random];
+		
+		random = (int) (Math.random() * topics.length);
+		response += " " + topics[random] + ".\n";
+		
+		random = (int) (Math.random() * questions.length);
+		response += questions[random];
+		
+		return response;
+	}
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
