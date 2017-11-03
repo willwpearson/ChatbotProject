@@ -95,6 +95,8 @@ public class Movie
 	
 	public String toString()
 	{
-		return null;
+		String description = "This movie is titled " + title + " and is in the genre " + genre + ". This movie got a rating of " + ratingMPAA + " and has this review: " + review + ". This movie has a length of " + length + " and was released on " + releaseDate + "."; 
+	
+		return description;
 	}
 }
