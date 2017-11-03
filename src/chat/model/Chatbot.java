@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
+	// Declaration section.
 	private List<Movie> movieList;
 	private List<String> shoppingList;
 	private List<String> cuteAnimalMemes;
@@ -120,6 +121,7 @@ public class Chatbot
 		return chatbotResponse;
 	}
 	
+	// Builds a response with random integers for each part of the sentence.
 	private String buildChatbotResponse()
 	{
 		String response = "I ";
@@ -140,6 +142,7 @@ public class Chatbot
 	{
 		boolean validLength = false;
 		
+		// Checks to see if each input given is a valid input with a length over 2 characters long.
 		if (input != null)
 		{
 			if (input.length() > 2)
@@ -175,6 +178,7 @@ public class Chatbot
 	{
 		boolean validList = false;
 		
+		// Loops over every item in the list and determines whether it contains the proper items for that list.
 		for(int index = 0; index < 11; index ++)
 		{
 			if (shoppingItem.contains(shoppingList.get(index)))
@@ -200,6 +204,7 @@ public class Chatbot
 	{
 		boolean validQuit = false;
 		
+		// Checks to see if the input given is any form of quit, and if it is, the program will terminate.
 		if (exitString!= "" && exitString != null && !exitString.equalsIgnoreCase("exit") && exitString.equalsIgnoreCase("quit"))
 		{
 			validQuit = true;

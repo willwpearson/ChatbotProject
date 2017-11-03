@@ -17,6 +17,7 @@ public class ChatbotController
 	{
 		String response = display.collectResponse("What do you want to talk about?");
 		
+		// Loops the responses over and over until an invalid response or quit is given.
 		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
 		{
 			response = popupChat(response);
