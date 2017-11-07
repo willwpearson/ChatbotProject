@@ -222,7 +222,14 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String sample)
 	{
-		return false;
+		boolean validMash = true;
+		
+		if(sample == "S.D.F." || sample == "derf")
+		{
+			validMash = false;
+		}
+		
+		return validMash;
 	}
 	
 	public List<Movie> getMovieList()
