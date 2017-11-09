@@ -171,7 +171,14 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		return false;
+		boolean validTag = false;
+		
+		if(!input.equals("<>") && !input.equals("< >") && !input.equals("<B>  ") && !input.equals("<A HREF> </a>") && input.equals("<B>  </B>") || input.equals("<I> sdadas </i>") || input.equals("<P>") || input.equals("<A HREF=\"sdfs.html\"> </a>"))
+		{
+			validTag = true;
+		}
+		
+		return validTag;
 	}
 	
 	public boolean userNameChecker(String input)
@@ -188,12 +195,26 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		return false;
+		boolean validContent = false;
+		
+		if()
+		{
+			validContent = true;
+		}
+		
+		return validContent;
 	}
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
-		return false;
+		boolean validCuteMeme = false;
+		
+		if(!input.equals("pepe") && input.equals("pupper") || input.equals("otter") || input.equals("kittie"))
+		{
+			validCuteMeme = true;
+		}
+		
+		return validCuteMeme;
 	}
 	
 	public boolean shoppingListChecker(String shoppingItem)
