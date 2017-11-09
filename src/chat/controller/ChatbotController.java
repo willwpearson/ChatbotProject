@@ -10,7 +10,7 @@ public class ChatbotController
 	
 	public ChatbotController()
 	{
-		chatbot = new Chatbot("Oshabot");
+		chatbot = new Chatbot("Senpai");
 		display = new PopupDisplay();
 	}
 	public void start()
