@@ -112,8 +112,8 @@ public class Chatbot
 	}
 	/**
 	 * The method takes in user input, and builds a response using that input and the method buildChatbotResponse().
-	 * @param input The response the user gives.
-	 * @return The method returns a string called chatbotResponse.
+	 * @param input The response the user gives as a String.
+	 * @return The method returns a response from the input and the buildChatbotResponse() method.
 	 */
 	public String processConversation(String input)
 	{
@@ -125,7 +125,10 @@ public class Chatbot
 		return chatbotResponse;
 	}
 	
-	// Builds a response with random integers for each part of the sentence.
+	/**
+	 * The method uses random numbers, to select various words and topics from arrays to construct a question to ask the user.
+	 * @return The method returns a string made of the randomly selected words.
+	 */
 	private String buildChatbotResponse()
 	{
 		String response = "I ";

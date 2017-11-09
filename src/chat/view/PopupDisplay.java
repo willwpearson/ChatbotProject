@@ -10,8 +10,8 @@ public class PopupDisplay
 	
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass().getResource("images/xD.png"));
-		windowTitle = "Senpai says";
+		icon = new ImageIcon(getClass().getResource("images/Oshabot.png"));
+		windowTitle = "Oshabot says";
 	}
 	
 	public void displayText(String message)
