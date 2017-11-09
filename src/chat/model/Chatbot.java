@@ -110,7 +110,11 @@ public class Chatbot
 		questions[9] = "What is your favorite movie?";
 				
 	}
-	
+	/**
+	 * The method takes in user input, and builds a response using that input and the method buildChatbotResponse().
+	 * @param input The response the user gives.
+	 * @return The method returns a string called chatbotResponse.
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
