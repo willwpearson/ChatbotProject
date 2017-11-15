@@ -195,14 +195,7 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		boolean validContent = false;
-		
-		if(content.contains(content))
-		{
-			validContent = true;
-		}
-		
-		return validContent;
+		return false;
 	}
 	
 	public boolean cuteAnimalMemeChecker(String input)
