@@ -8,6 +8,9 @@ import javax.swing.SpringLayout;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
@@ -39,6 +42,8 @@ public class ChatPanel extends JPanel
 		this.add(chatButton);
 		this.add(inputField);
 		this.add(chatArea);
+		chatArea.setEnabled(false);
+		chatArea.setEditable(false);
 	}
 	
 	private void setupLayout()
@@ -54,6 +59,17 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				submitResponse();
+			}
+		});
+	}
+	
+	private void submitResponse()
+	{
+		String submit = inputField.getText();
 	}
 }
