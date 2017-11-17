@@ -19,6 +19,10 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
+	/**
+	 * Initializes the data members needed.
+	 * @param username
+	 */
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>();
@@ -35,13 +39,16 @@ public class Chatbot
 		this.followUps = new String [5];
 		
 		buildVerbs();
-		buildMovieList();
+		//buildMovieList();
 		buildShoppingList();
 		buildCuteAnimals();
 		buildTopics();
 		buildQuestions();
 	}
 
+	/**
+	 * Fills the verbs array.
+	 */
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -50,6 +57,9 @@ public class Chatbot
 		verbs[3] = "am thinking about";
 	}
 	
+	/**
+	 * Fills the movie array.
+	 */
 	private void buildMovieList()
 	{
 //		movieList.add("Spiderman");
@@ -62,6 +72,9 @@ public class Chatbot
 //		movieList.add("Ex Machina");
 	}
 	
+	/**
+	 * Fills the shoppingList arrayList.
+	 */
 	private void buildShoppingList()
 	{
 		shoppingList.add("snacks");
@@ -77,6 +90,9 @@ public class Chatbot
 		shoppingList.add("Kit Kats");
 	}
 	
+	/**
+	 * Fills the cuteAnimalMemes arrayList.
+	 */
 	private void buildCuteAnimals()
 	{
 		cuteAnimalMemes.add("pupper");
@@ -85,6 +101,9 @@ public class Chatbot
 		cuteAnimalMemes.add("FLOOFER");
 	}
 	
+	/**
+	 * Fills the topics array.
+	 */
 	private void buildTopics()
 	{
 		topics[0] = "Math";
@@ -96,6 +115,9 @@ public class Chatbot
 		topics[6] = "Memes";
 	}
 	
+	/**
+	 * Fills the questions array.
+	 */
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
@@ -153,11 +175,15 @@ public class Chatbot
 		return response;
 	}
 	
+	/**
+	 * Checks to see if each input is a valid input over 2 characters long.
+	 * @param input The users text input.
+	 * @return True if a valid input is given.
+	 */
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
 		
-		// Checks to see if each input given is a valid input with a length over 2 characters long.
 		if (input != null)
 		{
 			if (input.length() > 2)
@@ -169,6 +195,11 @@ public class Chatbot
 		return validLength;
 	}
 	
+	/**
+	 * Checks to see if the html is a valid tag
+	 * @param input The users text input.
+	 * @return True if a valid input is given.
+	 */
 	public boolean htmlTagChecker(String input)
 	{
 		boolean validTag = false;
@@ -181,6 +212,11 @@ public class Chatbot
 		return validTag;
 	}
 	
+	/**
+	 * Checks to see if a valid username is given.
+	 * @param input The users text input.
+	 * @return True if a valid input is given.
+	 */
 	public boolean userNameChecker(String input)
 	{
 		boolean validUser = false;
@@ -195,16 +231,14 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		boolean validContent = false;
-		
-		if(content.contains(content))
-		{
-			validContent = true;
-		}
-		
-		return validContent;
+		return false;
 	}
 	
+	/**
+	 * Checks to see if the meme given is a valid Cute meme.
+	 * @param input The users text input.
+	 * @return True if a valid input is given.
+	 */
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		boolean validCuteMeme = false;
@@ -217,6 +251,11 @@ public class Chatbot
 		return validCuteMeme;
 	}
 	
+	/**
+	 * Checks to see if every item in the shopping list is valid.
+	 * @param shoppingItem The item in the shopping list.
+	 * @return True if every item in the shopping list is valid.
+	 */
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		boolean validList = false;
@@ -243,6 +282,11 @@ public class Chatbot
 		return false;
 	}
 
+	/**
+	 * Checks to see if the input is a valid Quit statement.
+	 * @param exitString The valid quit statement.
+	 * @return True if the quit statement is valid.
+	 */
 	public boolean quitChecker(String exitString)
 	{
 		boolean validQuit = false;
@@ -256,6 +300,11 @@ public class Chatbot
 		return validQuit;
 	}
 
+	/**
+	 * Checks to see if the keyboard has been mashed.
+	 * @param sample The users input.
+	 * @return True if the input is valid.
+	 */
 	public boolean keyboardMashChecker(String sample)
 	{
 		boolean validMash = false;

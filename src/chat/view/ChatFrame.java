@@ -8,6 +8,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 	
+	/**
+	 * Initializes the data members needed.
+	 * @param appController The controller for the Chatbot.
+	 */
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
@@ -16,6 +20,9 @@ public class ChatFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * Sets the frame up with the proper parameters.
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
