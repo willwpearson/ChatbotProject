@@ -229,6 +229,11 @@ public class Chatbot
 		return validUser;
 	}
 	
+	/**
+	 * Checks if there a special type of content in the input.
+	 * @param contentCheck The users input.
+	 * @return True if a valid input is given.
+	 */
 	public boolean contentChecker(String contentCheck)
 	{
 		return false;
