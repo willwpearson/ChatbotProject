@@ -31,7 +31,7 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String [10];
 		this.username = username;
-		this.content = content;
+		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = new String [7];
@@ -39,7 +39,7 @@ public class Chatbot
 		this.followUps = new String [5];
 		
 		buildVerbs();
-		//buildMovieList();
+		buildMovieList();
 		buildShoppingList();
 		buildCuteAnimals();
 		buildTopics();
@@ -202,14 +202,7 @@ public class Chatbot
 	 */
 	public boolean htmlTagChecker(String input)
 	{
-		boolean validTag = false;
-		
-		if(!input.equals("<>") && !input.equals("< >") && !input.equals("<B>  ") && !input.equals("<A HREF> </a>") && input.equals("<B>  </B>") || input.equals("<I> sdadas </i>") || input.equals("<P>") || input.equals("<A HREF=\"sdfs.html\"> </a>"))
-		{
-			validTag = true;
-		}
-		
-		return validTag;
+		return false;
 	}
 	
 	/**
@@ -279,12 +272,32 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
-		return false;
+		boolean validTitle = false;
+		
+		for(int index = 0; index < movieList.size(); index++)
+		{
+			if(title != "" && movieList.contains("Spiderman") || movieList.contains("Hidden Figures"))
+			{
+				validTitle = true;
+			}
+		}
+		
+		return validTitle;
 	}
 	
 	public boolean movieGenreChecker(String genre)
 	{
-		return false;
+		boolean validGenre = false;
+		
+		for(int index = 0; index < movieList.size(); index++)
+		{
+			if(genre != "" && movieList.contains("Documentary") || movieList.contains("Thriller"))
+			{
+				validGenre = true;
+			}
+		}
+		
+		return validGenre;
 	}
 
 	/**

@@ -30,7 +30,7 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		
 		//Initialize GUI data members
-		chatButton = new JButton("chat");
+		chatButton = new JButton("Chat");
 		chatArea = new JTextArea(10,25);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
