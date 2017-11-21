@@ -27,7 +27,7 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String [10];
 		this.username = username;
-		this.content = content;
+		this.content = "lol xD memes";
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = new String [7];
@@ -195,7 +195,14 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		return false;
+		boolean validContent = false;
+		
+		if(contentCheck.contains(content))
+		{
+			validContent = true;
+		}
+		
+		return validContent;
 	}
 	
 	public boolean cuteAnimalMemeChecker(String input)
