@@ -229,7 +229,14 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String contentCheck)
 	{
-		return false;
+		boolean validContent = false;
+		
+		if(contentCheck.contains(content))
+		{
+			validContent = true;
+		}
+		
+		return validContent;
 	}
 	
 	/**
