@@ -64,7 +64,7 @@ public class ChatbotController
 		}
 		if(chatbot.keyboardMashChecker(text))
 		{
-			response += "a;sdlkfj;alskdjf;laksjdf;lkaj";
+			response += "a;sdlkfj;alskdjf;laksjdf;lkaj\n";
 		}
 		
 		return response;
