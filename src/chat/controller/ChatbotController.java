@@ -50,4 +50,24 @@ public class ChatbotController
 		
 		return response;
 	}
+	
+	public String interactWithChatbot(String input)
+	{
+		String chatbotSays = "";
+		
+		if(chatbot.quitChecker(input))
+		{
+			close();
+		}
+		
+		chatbotSays += chatbot.processConversation(input);
+		
+		return chatbotSays;
+	}
+	
+	private void close()
+	{
+		display.displayText("goodbye");
+		System.exit(0);
+	}
 }
