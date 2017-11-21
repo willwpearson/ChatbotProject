@@ -2,68 +2,29 @@ package chat.controller;
 
 import chat.model.Chatbot;
 import chat.view.PopupDisplay;
-import chat.view.ChatFrame;
 
-/**
- * Manages the Chatbot application including the Model and Frame of the View package.
- * @author William Pearson
- * @version 21.11.17 Added Frame  1.3
- */
 public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
-	private ChatFrame appFrame;
 	
-	/**
-	 * Initializes all the data members needed.
-	 */
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Oshabot");
 		display = new PopupDisplay();
-		appFrame = new ChatFrame(this);
 	}
-	/**
-	 * Builds the program.
-	 */
 	public void start()
 	{
-		display.displayText("Welcome to Oshabot");
+		String response = display.collectResponse("What do you want to talk about?");
 		
 		// Loops the responses over and over until an invalid response or quit is given.
-//		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
-//		{
-//			response = popupChat(response);
-//			response = display.collectResponse(response);
-//		}
-	}
-	
-	public String interactWithChatbot(String input)
-	{
-		String chatbotSays = "";
-		
-		if(chatbot.quitChecker(input))
+		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
 		{
-			close();
+			response = popupChat(response);
+			response = display.collectResponse(response);
 		}
-		
-		chatbotSays += chatbot.processConversation(input);
-		
-		return chatbotSays;
 	}
 	
-	private void close()
-	{
-		display.displayText("Goodbye");
-		System.exit(0);
-	}
-	
-	/**
-	 * Gives the chatbot response from the chatbot method processController.
-	 * @param chat The input from the user from processConversation
-	 * @return The string the chatbot displays.
-	 */
 	private String popupChat(String chat)
 	{
 		String chatbotSays = "";
@@ -73,4 +34,20 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	public String useCheckers(String text)
+	{
+		String response = "";
+		
+		if(chatbot.contentChecker(text))
+		{
+			response += "This text matches the special content\n";
+		}
+		if(chatbot.cuteAnimalMemeChecker(text))
+		{
+			response += "";
+		}
+		//continue with all checkers.
+		
+		return response;
+	}
 }
