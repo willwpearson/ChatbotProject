@@ -44,9 +44,28 @@ public class ChatbotController
 		}
 		if(chatbot.cuteAnimalMemeChecker(text))
 		{
-			response += "";
+			response += "That is a cute meme.\n";
 		}
-		//continue with all checkers.
+		if(chatbot.userNameChecker(text))
+		{
+			response += ("Welcome, " + text + "\n");
+		}
+		if(chatbot.shoppingListChecker(text))
+		{
+			response += "I shop for that too.\n";
+		}
+		if(chatbot.movieTitleChecker(text))
+		{
+			response += "I love that movie\n";
+		}
+		if(chatbot.movieGenreChecker(text))
+		{
+			response += "That is an interesting genre of movie\n";
+		}
+		if(chatbot.keyboardMashChecker(text))
+		{
+			response += "a;sdlkfj;alskdjf;laksjdf;lkaj";
+		}
 		
 		return response;
 	}
