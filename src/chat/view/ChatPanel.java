@@ -11,6 +11,11 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 
+ * @author William Pearson
+ *
+ */
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
