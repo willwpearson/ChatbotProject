@@ -44,6 +44,7 @@ public class Chatbot
 		buildCuteAnimals();
 		buildTopics();
 		buildQuestions();
+		buildFollowUps();
 	}
 
 	/**
@@ -132,6 +133,15 @@ public class Chatbot
 		questions[9] = "What is your favorite movie?";
 				
 	}
+	
+	private void buildFollowUps()
+	{
+		followUps[0] = "I like playing Fallout 4.";
+		followUps[1] = "xD";
+		followUps[2] = "I like watching Inception.";
+		followUps[3] = "Dreams are cool.";
+		followUps[4] = "Ducks are fun.";
+	}
 	/**
 	 * The method takes in user input, and builds a response using that input and the method buildChatbotResponse().
 	 * @param input The response the user gives as a String.
@@ -170,6 +180,24 @@ public class Chatbot
 		{
 			random = (int) (Math.random() * shoppingList.size());
 			response += "\n" + shoppingList.get(random) + " is yummy!";
+		}
+		
+		int followup = (int) (Math.random() * 5);
+		
+		switch (followup)
+		{
+		case 0:
+			response += followUps[0] + "\n";
+			break;
+		case 3:
+			response += followUps[1] + "\n";
+		case 1:
+			response += followUps[2] + "\n";
+			break;
+		default:
+			response += followUps[4] + "\n";
+			response += followUps[3] + "\n";
+			break;
 		}
 		
 		return response;

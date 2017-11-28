@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.SpringLayout;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.JLabel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +25,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
 	private JButton checkerButton;
+	private JLabel infoLabel;
 	
 	/**
 	 * Initializes the data members needed.
@@ -38,6 +40,7 @@ public class ChatPanel extends JPanel
 		chatButton = new JButton("Chat");
 		chatArea = new JTextArea(10,25);
 		inputField = new JTextField(20);
+		infoLabel = new JLabel("Type to chat with Oshabot.");
 		appLayout = new SpringLayout();
 		checkerButton = new JButton("Check");
 		
@@ -57,6 +60,7 @@ public class ChatPanel extends JPanel
 		this.add(inputField);
 		this.add(chatArea);
 		this.add(checkerButton);
+		this.add(infoLabel);
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
 	}
@@ -77,6 +81,7 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, checkerButton, 0, SpringLayout.WEST, chatButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, checkerButton, 5, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, chatButton);
+		appLayout.putConstraint(SpringLayout.EAST, infoLabel, -135, SpringLayout.EAST, this);
 	}
 	
 	/**
