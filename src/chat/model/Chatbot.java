@@ -240,6 +240,8 @@ public class Chatbot
 		{
 			validTag = false;
 		}
+		
+		return validTag;
 	}
 	
 	/**
