@@ -32,7 +32,6 @@ public class Chatbot
 		this.questions = new String [10];
 		this.username = username;
 		this.content = "lol xD memes";
-		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = new String [7];
@@ -231,15 +230,32 @@ public class Chatbot
 	 */
 	public boolean htmlTagChecker(String input)
 	{
+		input.toUpperCase();
 		boolean validTag = false;
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">", firstOpen);
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
 		
-		if(!input.contains("<") && !input.contains(">"))
+		//Check bad tags
+		if(!input.contains("<") && !input.contains(">") || input == null)
 		{
 			validTag = false;
 		}
-		else if (input.contains("<>") || input.contains("< >"))
+		//Check singleton
+		if (input.contains("<P>") || input.contains("<BR>"))
 		{
-			validTag = false;
+			validTag = true;
+		}
+		//Check others
+		else if(firstClose > firstOpen)
+		{
+			//Others
+			tagText = input.substring(firstOpen + 1, firstClose);
+			secondOpen = input.indexOf("</" + tagText, firstClose);
+			
+			if(tagText.contains("))
 		}
 		
 		return validTag;
