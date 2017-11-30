@@ -31,11 +31,8 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String [10];
 		this.username = username;
-<<<<<<< HEAD
 		this.content = "lol xD memes";
-=======
 		this.content = null;
->>>>>>> adding_GUI_to_Chatbot
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = new String [7];
