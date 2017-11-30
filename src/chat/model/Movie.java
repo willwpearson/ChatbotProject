@@ -12,6 +12,9 @@ public class Movie
 	private LocalDate releaseDate;
 	private double starScore;
 	
+	/**
+	 * Initializes the data members needed.
+	 */
 	public Movie(String title)
 	{
 		this.title = "";
