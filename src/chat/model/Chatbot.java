@@ -255,7 +255,7 @@ public class Chatbot
 			tagText = input.substring(firstOpen + 1, firstClose);
 			secondOpen = input.indexOf("</" + tagText, firstClose);
 			
-			if(tagText.contains("))
+//			if(tagText.contains("))
 		}
 		
 		return validTag;
