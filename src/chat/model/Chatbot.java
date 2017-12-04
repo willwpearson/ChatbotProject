@@ -136,11 +136,11 @@ public class Chatbot
 	
 	private void buildFollowUps()
 	{
-		followUps[0] = "I like playing Fallout 4.";
-		followUps[1] = "xD";
-		followUps[2] = "I like watching Inception.";
-		followUps[3] = "Dreams are cool.";
-		followUps[4] = "Ducks are fun.";
+		followUps[0] = " I like playing Fallout 4.";
+		followUps[1] = " xD";
+		followUps[2] = " I like watching Inception.";
+		followUps[3] = " Dreams are cool.";
+		followUps[4] = " Ducks are fun.";
 	}
 	/**
 	 * The method takes in user input, and builds a response using that input and the method buildChatbotResponse().
