@@ -232,6 +232,10 @@ public class Chatbot
 	{
 		input.toUpperCase();
 		boolean validTag = false;
+		if(input == null || !input.contains("<"))
+		{
+			return validTag;
+		}
 		int firstOpen = input.indexOf("<");
 		int firstClose = input.indexOf(">", firstOpen);
 		int secondOpen = -9;
@@ -239,7 +243,7 @@ public class Chatbot
 		String tagText = "";
 		
 		//Check bad tags
-		if(!input.contains("<") && !input.contains(">") || input == null)
+		if(input.contains("<>") || input.indexOf("< >") > -1)
 		{
 			validTag = false;
 		}
@@ -254,8 +258,12 @@ public class Chatbot
 			//Others
 			tagText = input.substring(firstOpen + 1, firstClose);
 			secondOpen = input.indexOf("</" + tagText, firstClose);
+			secondClose = input.indexOf(">", secondOpen);
 			
-//			if(tagText.contains("))
+			if(secondClose > secondOpen)
+			{
+				validTag = true;
+			}
 		}
 		
 		return validTag;
