@@ -247,11 +247,13 @@ public class Chatbot
 		if(input.contains("<>") || input.indexOf("< >") > -1)
 		{
 			validTag = false;
+			return validTag;
 		}
 		//Check singleton
 		if (input.contains("<P>") || input.contains("<BR>"))
 		{
 			validTag = true;
+			return validTag;
 		}
 		//Check others
 		else if(firstClose > firstOpen)
@@ -260,15 +262,6 @@ public class Chatbot
 			tagText = input.substring(firstOpen + 1, firstClose);
 			secondOpen = input.indexOf("</" + tagText, firstClose);
 			
-			if(secondOpen > firstClose)
-			{
-				secondClose = input.indexOf(">", secondOpen);
-				
-				if(secondClose > secondOpen)
-				{
-					validTag = true;
-				}
-			}
 		}
 		
 		return validTag;
