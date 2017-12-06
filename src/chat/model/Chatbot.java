@@ -28,12 +28,11 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.currentTime = null;
 		this.questions = new String [10];
 		this.username = username;
 		this.content = "lol xD memes";
 		this.intro = null;
-		this.currentTime = null;
+		this.currentTime = LocalTime.now();
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
@@ -150,6 +149,8 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
+		currentTime = LocalTime.now();
+		chatbotResponse += currentTime.getHour() + ":" + currentTime.getMinute() + " ";
 		chatbotResponse += "You said:" + "\n" + input + "\n";
 		
 		chatbotResponse += buildChatbotResponse();
@@ -258,11 +259,15 @@ public class Chatbot
 			//Others
 			tagText = input.substring(firstOpen + 1, firstClose);
 			secondOpen = input.indexOf("</" + tagText, firstClose);
-			secondClose = input.indexOf(">", secondOpen);
 			
-			if(secondClose > secondOpen)
+			if(secondOpen > firstClose)
 			{
-				validTag = true;
+				secondClose = input.indexOf(">", secondOpen);
+				
+				if(secondClose > secondOpen)
+				{
+					validTag = true;
+				}
 			}
 		}
 		
