@@ -17,7 +17,7 @@ public class Movie
 	 */
 	public Movie(String title)
 	{
-		this.title = "";
+		this.title = title;
 		this.genre = "";
 		this.ratingMPAA = "";
 		this.review = "";

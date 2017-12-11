@@ -237,33 +237,36 @@ public class Chatbot
 		{
 			return validTag;
 		}
-		int firstOpen = input.indexOf("<");
-		int firstClose = input.indexOf(">", firstOpen);
-		int secondOpen = -9;
-		int secondClose = -9;
-		String tagText = "";
-		
-		//Check bad tags
-		if(input.contains("<>") || input.indexOf("< >") > -1)
+		if(input.equals("<>") || input.equals("< >"))
 		{
-			validTag = false;
 			return validTag;
 		}
-		//Check singleton
-		if (input.contains("<P>") || input.contains("<BR>"))
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">", firstOpen);
+		int secondOpen = input.indexOf("</", firstClose);
+		int secondClose = input.indexOf(">", secondOpen);
+		String tagText = "";
+		if(input.substring(firstOpen, firstClose).contains(input.substring(secondOpen, secondClose)))
 		{
 			validTag = true;
 			return validTag;
 		}
-		//Check others
-		else if(firstClose > firstOpen)
+		
+		if(input.substring(firstOpen, firstClose).equals("P") || input.substring(firstOpen, firstClose).equals("BR"))
 		{
-			//Others
-			tagText = input.substring(firstOpen + 1, firstClose);
-			secondOpen = input.indexOf("</" + tagText, firstClose);
-			
+			validTag = true;
+			return validTag;
 		}
 		
+		tagText = input.substring(firstOpen, firstClose);
+		
+		if(tagText.contains("A HREF"))
+		{
+			if (!tagText.contains("A HREF=") || !tagText.contains("A HREF ="))
+			{
+				validTag = false;
+			}
+		}
 		return validTag;
 	}
 	
@@ -406,6 +409,13 @@ public class Chatbot
 		}
 		
 		return validMash;
+	}
+	
+	public String toString()
+	{
+		String description = "";
+		
+		return description;
 	}
 	
 	public List<Movie> getMovieList()
