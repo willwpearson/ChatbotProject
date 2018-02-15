@@ -85,4 +85,9 @@ public class ChatbotController
 		display.displayText("goodbye");
 		System.exit(0);
 	}
+	
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
 }
