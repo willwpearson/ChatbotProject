@@ -348,7 +348,7 @@ public class Chatbot
 		
 		for(int index = 0; index < movieList.size(); index++)
 		{
-			if(title != "" && movieList.contains("Spiderman") || movieList.contains("Hidden Figures"))
+			if(title != "" && movieList.contains(title))
 			{
 				validTitle = true;
 			}
@@ -363,7 +363,7 @@ public class Chatbot
 		
 		for(int index = 0; index < movieList.size(); index++)
 		{
-			if(genre != "" && movieList.contains("Documentary") || movieList.contains("Thriller"))
+			if(genre != "" && movieList.contains(genre))
 			{
 				validGenre = true;
 			}
