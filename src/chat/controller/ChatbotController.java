@@ -3,16 +3,20 @@ package chat.controller;
 import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
+import chat.model.CTECTwitter;
 
 public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame chatFrame;
+	private CTECTwitter myTwitter;
 	
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Oshabot");
+		myTwitter = new CTECTwitter(this);
+		//View initialized after Model
 		display = new PopupDisplay();
 		chatFrame = new ChatFrame(this);
 	}
