@@ -99,4 +99,19 @@ public class ChatbotController
 	{
 		myTwitter.sendTweet(text);
 	}
+	
+	public Chatbot getChatbot()
+	{
+		return chatbot;
+	}
+	
+	public PopupDisplay getDisplay()
+	{
+		return display;
+	}
+	
+	public ChatFrame getChatFrame()
+	{
+		return chatFrame;
+	}
 }
