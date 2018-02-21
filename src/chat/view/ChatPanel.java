@@ -1,14 +1,9 @@
 package chat.view;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import chat.controller.ChatbotController;
 import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.SpringLayout;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +16,10 @@ public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
 	private JButton chatButton;
+	private JButton searchButton;
+	private JButton saveButton;
+	private JButton loadButton;
+	private JButton tweetButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
@@ -38,7 +37,11 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		
 		//Initialize GUI data members
-		chatButton = new JButton("Chat");
+		chatButton = new JButton("Chat", new ImageIcon(getClass().getResource("/chat/view/images/Chat Image.png")));
+		searchButton = new JButton("Search", new ImageIcon(getClass().getResource("/chat/view/images/Search Image.png")));
+		saveButton = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/Save Image.png")));
+		loadButton = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/Load Image.png")));
+		tweetButton = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/Tweet Image.png")));
 		chatArea = new JTextArea(10,25);
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type to chat with Oshabot.");
@@ -69,6 +72,10 @@ public class ChatPanel extends JPanel
 		this.setBackground(new Color(0, 102, 102));
 		this.setLayout(appLayout);
 		this.add(chatButton);
+		this.add(searchButton);
+		this.add(saveButton);
+		this.add(loadButton);
+		this.add(tweetButton);
 		this.add(inputField);
 		this.add(chatScrollPane);
 		this.add(checkerButton);
