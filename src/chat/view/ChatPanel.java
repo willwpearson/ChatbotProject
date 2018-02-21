@@ -143,5 +143,33 @@ public class ChatPanel extends JPanel
 				inputField.setText("");
 			}
 		});
+		searchButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		saveButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		loadButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		tweetButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				appController.tweet(inputField.getText());
+			}
+		});
 	}
 }
