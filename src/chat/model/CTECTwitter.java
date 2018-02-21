@@ -10,11 +10,11 @@ import twitter4j.Status;
 public class CTECTwitter
 {
 	private ChatbotController appController;
-	private Twitter chatbotTwitter
+	private Twitter chatbotTwitter;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
-		this.appController = appContorller;
+		this.appController = appController;
 		this.chatbotTwitter = TwitterFactory.getSingleton();
 	}
 	
