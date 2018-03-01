@@ -90,16 +90,6 @@ public class ChatbotController
 		System.exit(0);
 	}
 	
-	public void handleErrors(Exception error)
-	{
-		display.displayText(error.getMessage());
-	}
-	
-	public void tweet(String text)
-	{
-		myTwitter.sendTweet(text);
-	}
-	
 	public Chatbot getChatbot()
 	{
 		return chatbot;
@@ -113,5 +103,19 @@ public class ChatbotController
 	public ChatFrame getChatFrame()
 	{
 		return chatFrame;
+	}
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
+	}
+	
+	public String search(String text)
+	{
+		return myTwitter.getMostCommonWord(text);
 	}
 }
