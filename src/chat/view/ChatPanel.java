@@ -2,6 +2,8 @@ package chat.view;
 
 import javax.swing.*;
 import chat.controller.ChatbotController;
+import chat.controller.IOController;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
