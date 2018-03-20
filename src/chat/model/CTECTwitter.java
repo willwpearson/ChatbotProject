@@ -83,6 +83,8 @@ public class CTECTwitter
 		
 		mostCommon += "\n\n" + sortedWords();
 		
+		mostCommon += "\n\n" + analyzeTwitterForTopic(username);
+		
 		return mostCommon;
 	}
 	
@@ -267,15 +269,18 @@ public class CTECTwitter
 		String results = "";
 		searchedTweets.clear();
 		Query twitterQuery = new Query(topic);
+		QueryResult resultingTweets = null;
 		int resultMax = 750;
 		long lastId = Long.MAX_VALUE;
-		twitterQuery.setGeoCode(new GeoLocation(latitude, longitude), radius, Query.MEASUREMENT);
+		twitterQuery.setGeoCode(new GeoLocation(41.9028, 12.4964), 5, Query.MILES);
+		twitterQuery.setLang("Russian");
+		twitterQuery.setSince("1/1/2017");
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while(searchedTweets.size() < resultMax)
 		{
 			try
 			{
-				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+				resultingTweets = chatbotTwitter.search(twitterQuery);
 			}
 			catch(TwitterException error)
 			{
@@ -285,7 +290,7 @@ public class CTECTwitter
 			twitterQuery.setMaxId(lastId - 1);
 		}
 		
-		results += "Talk about the search results";
+		results += "The Query found " + resultingTweets.getCount() + " tweets matching the topic: " + topic + ". One of the tweets that matches this topic is: ";
 		results += "Find a tweet that will pass one of the checkers in chatbot";
 		
 		int randomTweet = (int)(Math.random() * matchingTweets.size());
