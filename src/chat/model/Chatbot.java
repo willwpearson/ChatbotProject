@@ -30,7 +30,7 @@ public class Chatbot
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.questions = new String [10];
 		this.username = username;
-		this.content = "lol xD memes";
+		this.content = "xD";
 		this.intro = null;
 		this.currentTime = LocalTime.now();
 		this.topics = new String [7];
