@@ -72,7 +72,7 @@ public class CTECTwitter
 		String mostCommonWord = sorted.get(0).getKey();
 		int maxWord = 0;
 		
-		maxWord = 0;
+		maxWord = sorted.get(0).getValue();
 		
 		mostCommon = "The most common word in " + username + "'s"+ searchedTweets.size() + " tweets is " +
 					mostCommonWord + " , and it was used " + maxWord + " times.\nThis is " +
@@ -82,8 +82,6 @@ public class CTECTwitter
 					" of the unique words: " + wordsAndCount.size();
 		
 		mostCommon += "\n\n" + sortedWords();
-		
-		mostCommon += "\n\n" + analyzeTwitterForTopic(username);
 		
 		return mostCommon;
 	}
@@ -221,7 +219,7 @@ public class CTECTwitter
 		{
 			for(int removeIndex = 0; removeIndex < boringWords.length; removeIndex++)
 			{
-				if(tweetedWords.get(index).equals(boringWords[removeIndex]))
+				if(tweetedWords.get(index).equalsIgnoreCase(boringWords[removeIndex]))
 				{
 					tweetedWords.remove(index);
 					removeIndex = boringWords.length;
@@ -291,7 +289,7 @@ public class CTECTwitter
 		}
 		
 		results += "The Query found " + resultingTweets.getCount() + " tweets matching the topic: " + topic + ". One of the tweets that matches this topic is: ";
-		results += "Find a tweet that will pass one of the checkers in chatbot";
+//		results += "Find a tweet that will pass one of the checkers in chatbot";
 		
 		int randomTweet = (int)(Math.random() * matchingTweets.size());
 		results += matchingTweets.get(randomTweet);
