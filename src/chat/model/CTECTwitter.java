@@ -271,8 +271,8 @@ public class CTECTwitter
 		int resultMax = 750;
 		long lastId = Long.MAX_VALUE;
 		twitterQuery.setGeoCode(new GeoLocation(41.9028, 12.4964), 5, Query.MILES);
-		twitterQuery.setLang("Russian");
-		twitterQuery.setSince("1/1/2017");
+		twitterQuery.setLang("ru");
+		twitterQuery.setSince("2017-01-01");
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while(searchedTweets.size() < resultMax)
 		{
